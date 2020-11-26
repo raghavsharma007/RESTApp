@@ -89,7 +89,8 @@ class ForgotPasswordAPI(APIView):
 
         # generate OTP instance to later check for authenticity, we can mail this OTP to email
         try:
-            OtpGenerator.objects.get(email__iexact=email).delete()
+            obj = OtpGenerator.objects.get(email__iexact=email)
+            obj.delete()
         except OtpGenerator.DoesNotExist:
             obj = OtpGenerator.objects.create(email=email, otp=otp)
         # return OTP
@@ -101,6 +102,14 @@ class ForgotPasswordAPI(APIView):
         otp = request.data['otp']
         password1 = request.data['password1']
         password2 = request.data['password2']
+
+        # check for authenticity of OTP
+        try:
+            otp_obj = OtpGenerator.objects.get(email=email).otp
+            if otp != int(otp_obj):
+                return Response({"Error": "incorrect OTP"})
+        except:
+            return Response({"Error": "incorrect OTP"})
 
         # check if passwords are same
         if password1 == password2:
