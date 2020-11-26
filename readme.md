@@ -22,7 +22,7 @@ body = {
 </code></pre>
 </li>
 <li class="has-line-data" data-line-start="25" data-line-end="26">you will get refresh and access token. COPY access</li>
-<li class="has-line-data" data-line-start="26" data-line-end="28">you can also use test student(<a href="mailto:email-student1@mail.com">email-student1@mail.com</a>, password-student1) or test teacher(<a href="mailto:email-teacher1@mail.com">email-teacher1@mail.com</a>, password-teacher1) instead of admin user above.</li>
+<li class="has-line-data" data-line-start="26" data-line-end="28">you can also use test student(<a href="mailto:email:student1@mail.com">email:student1@mail.com</a>, password:student1) or test teacher(<a href="mailto:email:teacher1@mail.com">email:teacher1@mail.com</a>, password:teacher1) instead of admin user above.</li>
 </ul>
 <h1 class="code-line" data-line-start=28 data-line-end=29 ><a id="create_and_get_users_28"></a>create and get users</h1>
 <ul>
@@ -52,10 +52,10 @@ body = {
 <p class="has-line-data" data-line-start="45" data-line-end="46">Admin can create users with all three groups</p>
 </li>
 <li class="has-line-data" data-line-start="46" data-line-end="47">
-<p class="has-line-data" data-line-start="46" data-line-end="47">test teacher(<a href="mailto:email-teacher1@mail.com">email-teacher1@mail.com</a>, password-teacher1) can only pass group: [“student”]</p>
+<p class="has-line-data" data-line-start="46" data-line-end="47">test teacher(<a href="mailto:email:teacher1@mail.com">email:teacher1@mail.com</a>, password:teacher1) can only pass group: [“student”]</p>
 </li>
 <li class="has-line-data" data-line-start="47" data-line-end="49">
-<p class="has-line-data" data-line-start="47" data-line-end="48">access token generated using test student(<a href="mailto:email-student1@mail.com">email-student1@mail.com</a>, password-student1) cannot create any user. The response in both with be Access denied with status code 401.</p>
+<p class="has-line-data" data-line-start="47" data-line-end="48">access token generated using test student(<a href="mailto:email:student1@mail.com">email:student1@mail.com</a>, password:student1) cannot create any user. The response in both with be Access denied with status code 401.</p>
 </li>
 <li class="has-line-data" data-line-start="49" data-line-end="53">
 <p class="has-line-data" data-line-start="49" data-line-end="50">And to get User and students, GET</p>
